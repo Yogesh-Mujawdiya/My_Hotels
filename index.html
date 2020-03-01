@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<title>MY Hotel</title>
+	<link rel="icon" href="res/logo.png"  type="image/png">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css'>
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Hind+Guntur:300,400,500,600,700&amp;display=swap'>
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css'>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
+	<link rel="stylesheet" href="css/Main.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/P.css">
+	<link rel="stylesheet" href="css/Data.css">
+</head>
+<body>
+    <nav class="navigationWrapper" id="NAV">
+	    <div class="logoWrapper">
+	    	<img width="80px" src="res/logo.png">
+	     	<div class="logo">Hotel</div>	     	
+	    </div>
+	    <ul class="navigation">
+	      <li class="parent"><a class="link" href="index.html">Home</a></li>
+	      <li class="parent"><a class="link" href="#">About</a></li>
+	      <li class="parent" id="services"> <a class="link" href="#"><i class="fas fa-minus"></i> Services <i class="fas fa-plus"></i></a>
+	        <ul class="subnavigation">
+	          <li><a class="link" href="#">Book Hotel</a></li>
+	          <li><a class="link" href="#">Search Hotel</a></li>
+	        </ul>
+	      </li>
+	      <li class="parent"><a class="link" id="LoginSignupForm"><div id="CurrentStatus"> Login </div></a></li>
+	    </ul>
+  	</nav>
+    
+    <ul class="side-nav-bar">
+        <li><a class='list-item' href=''><i class='icon-home'></i></a></li>
+        <li><a class='list-item' href=''><i class='icon-th-large'></i></a></li>
+        <li><a class='list-item' href=''><i class='icon-tasks'></i></a></li>
+        <li><a class='list-item' href=''><i class='icon-bell'></i></a></li>
+        <li><a class='list-item' href=''><i class='icon-archive'></i></a></li>
+        <li><a class='list-item' href=''><i class='icon-user'></i></a></li>
+        <li><a class='list-item' href=''><i class='icon-search'></i></a></li>
+        <li><a class='list-item' href=''><i class='icon-signin'></i></a></li>
+        <li><a class='list-item' href=''><i class='icon-signout'></i></a></li>
+    </ul>
+    <div class="container" id="LoginSignup">
+	    <div class="frame" >
+	      	<a class="close-button">Close</a>
+	      	<div id="Form1">
+	          	<div class="nav">
+		            <ul class="links">
+		              <li class="signin-active"><a class="btn">Sign in</a></li>
+		              <li class="signup-inactive"><a class="btn">Sign up </a></li>
+		            </ul>
+	          	</div>
+	          	<div ng-app ng-init="checked = false">
+	            	<form class="form-signin" action="" name="form" id="LoginForm">
+						<label for="username">Username</label>
+						<input class="form-styling" type="text" id="username" placeholder=""/>
+						<label for="password">Password</label>
+						<input class="form-styling" type="text" id="login_password" placeholder=""/>
+						<input type="checkbox" id="checkbox"/>
+						<label for="checkbox" ><span class="ui"></span>Keep me signed in</label>
+						<div class="btn-animate">
+							<a class="btn-signin" onclick="login()">Sign in</a>
+						</div>
+	            	</form>
+	            	<form class="form-signup" action="" method="post" name="form" id="SignupForm">
+						<label for="fullname">Full name</label>
+						<input class="form-styling" type="text" id="fullname" required />
+						<label for="email">Email</label>
+						<input class="form-styling" type="text" id="email" required />
+						<label for="mobile">Mobile</label>
+						<input class="form-styling" type="text" id="mobile" required />
+						<label for="age">Age</label>
+						<input class="form-styling" type="text" id="age" required />
+						<label for="password">Password</label>
+						<input class="form-styling" type="password" id="password"/>
+						<label for="confirmpassword">Confirm password</label>
+						<input class="form-styling" type="password" id="confirmpassword"/>
+						<a ng-click="checked = !checked" class="btn-signup">Sign Up</a>
+	            	</form>
+	          	</div>
+	          	<div class="forgot">Forgot your password?</div>
+          		<div  class="fogot_password">
+        			<div class="text-fild">Forget Password</div>
+	        		<div class="input-box">
+          				<div class="form-group">
+            				<label class="form-label" for="last">Email</label>
+            				<input id="reset_email" class="form-input" type="text" />
+          				</div>
+        			</div>
+        			<a class="btn-reset-password" onclick="sendPasswordReset()">Reset Password</a>
+      			</div>
+      		</div>
+	      	<div id="Form2">
+	          	<div id="Profile" class="UserProfile">
+		            <div class="cover-photo"></div>
+	            	<div class="profile-photo">
+	              		<label class="custom-file-upload fas">
+	                		<div class="img-wrap">
+	                			<img id="UserProfileImage" class="myImg" src="">
+	                		</div>
+	              		</label>
+	            	</div>
+	            	<div id="myModalimage" class="modalimage">
+	              		<span class="closeimage">&times;</span>
+	              		<img class="modal-image-content" id="img01">
+	            	</div>
+	            	<h1 class="welcome">
+		                Welcome , <span id="CurrentUser">Jay</span>
+		                <table class="tab">
+		                    <tr><th align="left">Email</th><th>:</th><td align="right" id="userEmail"> </td></tr>
+		                    <tr><th align="left">Mobile</th><th>:</th><td align="right" id="userMobile"></td></tr>
+		                    <tr><th align="left">Gender</th><th>:</th><td align="right" id="userGender"></td></tr>
+		                	<tr><th align="left">Age</th><th>:</th><td align="right" id="userAge"></td></tr>
+		                </table>
+		            </h1>
+	            	<a class="btn-edit-profile" >Edit Profile</a>
+	            	<a class="btn-logout" onclick="logout()">Logout</a>
+	          	</div>
+	          	<div id="EditProfile" class="UserProfile">
+	            	<div class="Editcover-photo"></div>
+	            	<div class="Editprofile-photo">
+	              		<label for="photo-upload" class="custom-file-upload fas">
+	              			<div class="img-wrap img-upload">
+	              				<img id="SetProfile" src="">
+	              			</div>
+	              			<input id="photo-upload" accept="image/*" name="image" type="file" onchange="loadFile(event)">
+	              		</label>
+	            	</div>
+	            	<div class="Editwelcome">
+	                	<div class="field">
+	                    	<label >Name</label>
+	                    	<input id="current-user-name" type="text" onChange: onChange maxlength: 25 required: true/>
+	                    </div>
+	                	<div class="field">
+	                    	<label >Age</label>
+	                    	<input id="current-user-age" type="text" onChange: onChange maxlength: 25 required: true/>
+	                    </div>
+	                	<div class="field">
+	                    	<label >Mobile</label>
+	                    	<input id="current-user-mobile" type="text" onChange: onChange maxlength: 25 required: true/>        
+	                	</div>
+	                	<div class="field">
+	                    	<label for="gender">Gender</label>
+	                    	<input id="current-user-gender" type="text" onChange: onChange maxlength: 25 required: true/>        
+	                	</div>
+	            	</div>
+	            	<a class="btn-save-profile" >Save Profile</a>
+	            	<a class="btn-back" >Back</a>
+	          	</div>
+	          	<div  class="success">
+	              	<div class="successtext">
+	                	<p> Thanks for signing up! Check your email for confirmation and Reload it.</p>
+	              	</div>
+	            </div>
+	          	<a class="btn-confirmation-email">Resend Confirmation Email</a>
+	      	</div>
+	    </div>
+    </div>
+    <div id="myModal" class="modal">
+	    <!-- Modal content -->
+	    <div class="modal-content">
+	        <label id="message">Data Uploading...</label>
+	        <button id="btn-ok" onclick="location.reload()">Ok</button>
+	    </div>
+    </div>
+    <div class="loader" id="loader">
+	  	<span></span>
+	  	<span></span>
+	  	<span></span>
+	</div>
+    <!-- partial:index.partial.html -->
+	<section class="containers">
+		<div class="row active-with-click" id="Hotel-List">
+		</div>
+		<div class="loader" id="loader">
+			<span></span>
+			<span></span>
+			<span></span>
+        </div>
+	</section>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>  
+  	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
+	<script>
+		var firebaseConfig = {
+			apiKey: "AIzaSyCHVIm6d89AotYRLx2_Nn4Ma-KrJQRFoSc",
+			authDomain: "my-hotels-90.firebaseapp.com",
+			databaseURL: "https://my-hotels-90.firebaseio.com",
+			projectId: "my-hotels-90",
+			storageBucket: "my-hotels-90.appspot.com",
+			messagingSenderId: "372573293656",
+			appId: "1:372573293656:web:fc6e75024ab17c2ebbce2d",
+			measurementId: "G-CGJB53CHMH"
+		};
+		firebase.initializeApp(firebaseConfig);
+	</script>
+  	<script  src="js/Main.js"></script>
+  	<script  src="js/Data.js"></script>
+</body>
+</html>

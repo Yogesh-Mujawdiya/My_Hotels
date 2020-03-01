@@ -1,0 +1,209 @@
+.UserProfile h1{
+    color: black;
+    margin: 0;
+    padding: 0;
+    font-weight:500 ;
+}
+
+.UserProfile .field{
+  margin: 5px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+
+.UserProfile  input[type="file"] {  display: none; }
+
+.UserProfile .custom-file-upload {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  position: relative;
+  padding: 6px;
+  cursor: pointer;
+  background: -webkit-gradient(linear, right top, left top, from(#3fa1a9), to(#79f1a4));
+  background: linear-gradient(270deg, #3fa1a9, #79f1a4);
+  margin-bottom: 10px;
+}
+
+.UserProfile .img-wrap{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0px 30px 20px -25px  #000;   
+}
+
+.UserProfile .img-upload:before{
+  content: "\f093";
+  font-size: 90px;
+  position: absolute;
+  padding-top: 80px;
+    z-index: 1;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  color: #63d3a6;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  background-color: #fff;
+}
+
+.UserProfile .img-upload:hover:before{ opacity: 1; }
+
+.UserProfile img {
+  position: absolute;
+  margin: auto;
+  height: 100%;
+  left: -100%;
+  right: -100%;
+}
+
+.UserProfile .imgage:hover { cursor: pointer; }
+
+.Editwelcome label{
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+  color: #676767;
+}
+
+.UserProfile input{
+  border-radius: 15px;
+  border: 1px solid #b7b7b7;
+  padding: 5px 5px 5px 10px;
+  font-size: 18px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.UserProfile input:focus{
+  outline: none;
+  border: 1px solid #64d488;
+}
+
+.UserProfile input::-webkit-input-placeholder{ color: #bebebe; }
+
+.UserProfile input::-moz-placeholder{ color: #bebebe; }
+
+.UserProfile input:-ms-input-placeholder{ color: #bebebe; }
+
+.UserProfile input::-ms-input-placeholder{ color: #bebebe; }
+
+.UserProfile input::placeholder{ color: #bebebe; }
+
+.modal button{
+  position: relative;
+    display: none;
+  color: #054231;
+  letter-spacing: 1px;
+  margin-left: 128px;
+  margin-right: 128px;
+  font-size: 18px;
+    transition: transform 1s,padding 1s,margin 1s;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 25px;
+  border: none;
+  background: #64d488;
+}
+
+.modal button:hover{
+  left: 0;
+  color: #fff;
+  margin-left: 100px;
+  transform: scale(1.2);
+  margin-right: 100px;
+  padding-left: 40px;
+  padding-right: 40px;
+  box-shadow: 0px 0px 20px 0px  #63d3a6;
+}
+
+.modal button:focus{ outline: none; }
+
+.UserProfile .lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+.UserProfile .lds-ripple div {
+  position: absolute;
+  border: 4px solid #fff;
+  opacity: 1;
+  border-radius: 50%;
+  -webkit-animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+          animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.UserProfile .lds-ripple div:nth-child(2) {
+  -webkit-animation-delay: -0.5s;
+          animation-delay: -0.5s;
+}
+
+.modalimage {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 500; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+.modal-image-content {
+  margin: auto;
+  display: block;
+  max-height:50%;
+  width: auto;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+.closeimage {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.closeimage:hover,
+.closeimage:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 700px){
+  .modal-image-content {
+    width: 100%;
+  }
+}
